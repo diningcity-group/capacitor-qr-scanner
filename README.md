@@ -32,7 +32,7 @@ show like this , add Success;
     <img src="/images/plugin_04.png" width="800">
 </div> 
 
-###### c. info.plist anth:
+###### c. info.plist auth:
     check your info.plist file, if there is not 'Privacy - Camera Usage Description' exist;
     add 'NSCameraUsageDescription' with String like below;
 
