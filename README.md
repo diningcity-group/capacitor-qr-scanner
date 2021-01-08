@@ -13,8 +13,8 @@ capacitor-qr-scanner/node_modules/@capacitor/ios/Capacitor/Capacitor/Plugins/QrS
 <div align=center>
 <img src="/images/plugin_01.png" width="200">
 </div>
-![QrScanner](./images/plugin_01.png)
 
+![QrScanner](./images/plugin_01.png)
 ##### Step 2: add QrCodePlugin to your iOS Project with below operations;
 ######  a.open your ios project:
 <div align=center>
