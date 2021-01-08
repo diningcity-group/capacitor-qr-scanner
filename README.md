@@ -40,7 +40,7 @@ show like this , add Success;
     <img src="/images/plugin_05.png" width="800">
 </div> 
 
-###### d. Web excute ios method:
+###### d. Web excute iOS method:
  
  <div align=center>
     <img src="/images/plugin_web.png" width="800">
