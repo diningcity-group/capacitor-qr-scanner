@@ -46,7 +46,7 @@ show like this , add Success;
     <img src="/images/plugin_web.png" width="800">
 </div>   
 
-###### e. Teminal excute order:
+###### e. Terminal excute order:
     
 ```
 npx ionic capacitor copy ios
