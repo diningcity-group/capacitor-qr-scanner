@@ -9,9 +9,9 @@ A QR Code scanner for Android and iOS using Capacitor
 ```
 capacitor-qr-scanner/node_modules/@capacitor/ios/Capacitor/Capacitor/Plugins/QrScanner
 ```
-<!--![QrScanner](/images/plugin_01.png)-->
+<!--![QrScanner](./images/plugin_01.png)-->
 <div align=center>
-<img src="/images/plugin_01.png" width="200">
+<img src="./images/plugin_01.png" width="200">
 </div>
 
 ##### Step 2: add QrCodePlugin to your iOS Project with below operations;
