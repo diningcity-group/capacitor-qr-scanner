@@ -9,29 +9,27 @@ A QR Code scanner for Android and iOS using Capacitor
 ```
 capacitor-qr-scanner/node_modules/@capacitor/ios/Capacitor/Capacitor/Plugins/QrScanner
 ```
-<!--![QrScanner](/images/plugin_01.png)-->
 <div align=center>
-<img src="/images/plugin_01.png" width="200">
+<img src="/images/plugin_01.png" width="800">
 </div>
 
-![QrScanner](./images/plugin_01.png)
 ##### Step 2: add QrCodePlugin to your iOS Project with below operations;
 ######  a.open your ios project:
 <div align=center>
-    <img src="/images/plugin_02_0.png" width="200">
+    <img src="/images/plugin_02_0.png" width="800">
 </div> 
 
 ###### b. add QrCodePlugin file:(path : node_modules/@capacitor/ios/Capacitor/Capacitor/Plugins/QrScanner)
 <div align=center>
-    <img src="/images/plugin_02.png" width="200">
+    <img src="/images/plugin_02.png" width="800">
 </div> 
  <div align=center>
-    <img src="/images/plugin_03.png" width="200">
+    <img src="/images/plugin_03.png" width="800">
 </div> 
 
 show like this , add Success;
 <div align=center>
-    <img src="/images/plugin_04.png" width="200">
+    <img src="/images/plugin_04.png" width="800">
 </div> 
 
 ###### c. info.plist anth:
@@ -39,13 +37,13 @@ show like this , add Success;
     add 'NSCameraUsageDescription' with String like below;
 
 <div align=center>
-    <img src="/images/plugin_05.png" width="200">
+    <img src="/images/plugin_05.png" width="800">
 </div> 
 
 ###### d. Web excute ios method:
  
  <div align=center>
-    <img src="/images/plugin_web.png" width="200">
+    <img src="/images/plugin_web.png" width="800">
 </div>   
 
 ###### e. Teminal excute order:
