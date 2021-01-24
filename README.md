@@ -82,18 +82,7 @@ capacitor-qr-scanner/node_modules/@capacitor/android/capacitor/src/main/res/layo
 <img src="/images/step2.png" width="800">
 </div>
 
-##### Step 2: layout file in path:
-  (copy this file to your project same path;)
-  
-```
-capacitor-qr-scanner/node_modules/@capacitor/android/capacitor/src/main/res/layout/activity_code_scanner.xml
-capacitor-qr-scanner/node_modules/@capacitor/android/capacitor/src/main/res/layout/dialog_scan_result.xml
-```
-<div align=center>
-<img src="/images/step2.png" width="800">
-</div>
-
-##### Step 3: styles file in path:
+##### Step 3: styles & strings file in path:
   (change these files;)
   
 ```
