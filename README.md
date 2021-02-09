@@ -1,5 +1,5 @@
-- English
-- Chinese, Simplified / 中文
+- [English](#welcome-to-the-capacitor-qr-code-scanner)
+- [Chinese, Simplified / 中文](#欢迎使用-电容qr扫描仪)
 
 # Welcome to the Capacitor QR Code Scanner
 
