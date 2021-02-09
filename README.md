@@ -12,8 +12,36 @@ This repository is a capacitor plug in for scanning QR Codes on Android and iOS.
 
 ## Installation
 
+To install from the command line:
+
+````shell
+npm i @diningcity/capacitor-qr-scanner
+````
 
 ## Usage
+
+To import the following into your code
+
+````react
+import {Plugins} from '@diningcity/capacitor-qr-scanner';
+import React from "react";
+
+const {QrScanner} = Plugins;
+
+const Test = () => {
+    async function scanQR() {
+        let ret = await QrScanner.scanQrCode();
+        alert(JSON.stringify(ret))
+    }
+    return (
+        <React.Fragment>
+            <div onClick={() => scanQR()}>
+            </div>
+        </React.Fragment>
+    );
+};
+
+````
 
 # 欢迎使用 电容qr扫描仪
 使用电容器的Android和iOS二维码扫描仪
@@ -28,7 +56,7 @@ npm i @diningcity/capacitor-qr-scanner
 ````
 
 在组件中引入
-````recat
+````react
 import {Plugins} from '@diningcity/capacitor-qr-scanner';
 import React from "react";
 
