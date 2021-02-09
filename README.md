@@ -23,7 +23,7 @@ npm i @diningcity/capacitor-qr-scanner
 To import the following into your code
 
 ````react
-import {Plugins} from '@diningcity/capacitor-qr-scanner';
+import {QrScanner} from '@diningcity/capacitor-qr-scanner';
 import React from "react";
 const Test = () => {
     async function scanQR() {
