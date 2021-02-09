@@ -1,3 +1,20 @@
+- English
+- Chinese, Simplified / 中文
+
+# Welcome to the Capacitor QR Code Scanner
+
+This repository is a capacitor plug in for scanning QR Codes on Android and iOS.
+
+# Table of contents
+
+- [Installation](#Installation)
+- [Usage](#Usage)
+
+## Installation
+
+
+## Usage
+
 # 欢迎使用 电容qr扫描仪
 使用电容器的Android和iOS二维码扫描仪
 # 目录
