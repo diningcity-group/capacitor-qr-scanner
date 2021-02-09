@@ -46,16 +46,17 @@ const Test = () => {
 # 欢迎使用 电容qr扫描仪
 使用电容器的Android和iOS二维码扫描仪
 # 目录
-- 中文：
-  - [安装和运行](https://github.com/diningcity-group/capacitor-qr-scanner/blob/main/README.md#安装和运行)
+- [安装](#安装)
+- [用法](#用法)
 
-## 安装和运行
-从命令行安装
+## 安装
+从命令行安装，请执行以下操作：
 ````shell
 npm i @diningcity/capacitor-qr-scanner
 ````
 
-在组件中引入
+## 用法
+将以下内容引入到代码中
 ````react
 import {Plugins} from '@diningcity/capacitor-qr-scanner';
 import React from "react";
