@@ -25,13 +25,11 @@ To import the following into your code
 ````react
 import {Plugins} from '@diningcity/capacitor-qr-scanner';
 import React from "react";
-
-const {QrScanner} = Plugins;
-
 const Test = () => {
     async function scanQR() {
-        let ret = await QrScanner.scanQrCode();
-        alert(JSON.stringify(ret))
+          let ret =  QrScanner.echo({value:"test"}).then(function (data) {
+               alert(JSON.stringify(data))
+           });
     }
     return (
         <React.Fragment>
@@ -58,15 +56,14 @@ npm i @diningcity/capacitor-qr-scanner
 ## 用法
 将以下内容引入到代码中
 ````react
-import {Plugins} from '@diningcity/capacitor-qr-scanner';
+import {QrScanner} from '@diningcity/capacitor-qr-scanner';
 import React from "react";
-
-const {QrScanner} = Plugins;
 
 const Test = () => {
     async function scanQR() {
-        let ret = await QrScanner.scanQrCode();
-        alert(JSON.stringify(ret))
+          let ret =  QrScanner.echo({value:"test"}).then(function (data) {
+               alert(JSON.stringify(data))
+           });
     }
     return (
         <React.Fragment>
