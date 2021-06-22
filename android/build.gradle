@@ -49,4 +49,8 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation 'com.budiyev.android:code-scanner:2.1.0'
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.core:core:1.2.0"
+    implementation "com.google.android.material:material:1.1.0-rc02"
 }
