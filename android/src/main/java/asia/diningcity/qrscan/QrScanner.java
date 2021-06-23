@@ -1,6 +1,7 @@
 package asia.diningcity.qrscan;
 
 import android.content.Intent;
+import android.util.Log;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
@@ -14,10 +15,12 @@ import com.getcapacitor.PluginMethod;
 public class QrScanner extends Plugin {
     protected static final int REQUEST_CODE_SCAN = 2;
 
+    private final String TAG = QrScanner.class.getSimpleName();
     @PluginMethod
     public void scanQrCode(PluginCall call) {
         saveCall(call);
 
+        Log.d(TAG, "Android scanQrCode called");
         Intent scanIntent = new Intent(getContext(), CodeScannerActivity.class);
         startActivityForResult(call, scanIntent, REQUEST_CODE_SCAN);
     }
@@ -26,8 +29,10 @@ public class QrScanner extends Plugin {
     protected void handleOnActivityResult(int requestCode, int resultCode, Intent data) {
         super.handleOnActivityResult(requestCode, resultCode, data);
 
+        Log.d(TAG, "Android scanQrCode handleOnActivityResult");
+
         PluginCall savedCall = getSavedCall();
-        if (savedCall == null) return;
+        if (savedCall == null || data == null) return;
 
         if (requestCode == REQUEST_CODE_SCAN) {
             if (resultCode == 0) {
