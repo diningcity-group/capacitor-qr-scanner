@@ -21,7 +21,7 @@ npm i @diningcity/capacitor-qr-scanner
 
 1. Open the android project with android studio and you should register the plugin class in MainActivity.java as follows
 
-    ```java
+````
 public class MainActivity extends BridgeActivity {
       @Override
       public void onCreate(Bundle savedInstanceState) {
@@ -33,16 +33,16 @@ public class MainActivity extends BridgeActivity {
         }});
       }
     }
-```
+````
 
 2. Add CodeScannerActivity into AndroidManifest.xml
 
-```xml
+````
 <activity        android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
         android:name="asia.diningcity.qrscan.CodeScannerActivity"
         tools:ignore="Instantiatable">
     </activity>
-```
+````
 
 ## Usage
 
