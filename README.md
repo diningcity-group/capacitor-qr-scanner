@@ -17,19 +17,46 @@ To install from the command line:
 ````shell
 npm i @diningcity/capacitor-qr-scanner
 ````
+**NOTE:** After install the plug-in, you should add some code snippets into your android project.
+
+1. Open the android project with android studio and you should register the plugin class in MainActivity.java as follows
+
+    ```java
+public class MainActivity extends BridgeActivity {
+      @Override
+      public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Initializes the Bridge
+        this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
+          // Additional plugins you've installed go here
+          add(QrScanner.class);
+        }});
+      }
+    }
+```
+
+2. Add CodeScannerActivity into AndroidManifest.xml
+
+```xml
+<activity        android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+        android:name="asia.diningcity.qrscan.CodeScannerActivity"
+        tools:ignore="Instantiatable">
+    </activity>
+```
 
 ## Usage
 
 To import the following into your code
 
 ````react
-import {QrScanner} from '@diningcity/capacitor-qr-scanner';
+import { Plugins } from '@capacitor/core';
+const { QrScanner } = Plugins;
 import React from "react";
 const Test = () => {
     async function scanQR() {
-          let ret =  QrScanner.echo({value:"test"}).then(function (data) {
-               alert(JSON.stringify(data))
-           });
+		let ret = QrScanner.scanQrCode().then((data) => {
+        	alert(JSON.stringify(data))
+		});
     }
     return (
         <React.Fragment>
