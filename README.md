@@ -44,6 +44,9 @@ public class MainActivity extends BridgeActivity {
         tools:ignore="Instantiatable">
     </activity>
 ````
+3. Compile the android project, android studio will show build error. Replace all ````android.support.v4.content.FileProvider```` with ````androidx.core.content.FileProvider```` and build again.
+
+4. That's all
 
 ## Usage
 
