@@ -1,0 +1,6 @@
+framework module MercariQRScanner {
+  umbrella header "MercariQRScanner-umbrella.h"
+
+  export *
+  module * { export * }
+}

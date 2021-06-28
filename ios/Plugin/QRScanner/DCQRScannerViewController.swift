@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Capacitor
+import MercariQRScanner
 
 protocol DCQRScannerViewControllerDelegate {
     func viewController(_ viewController: DCQRScannerViewController, didScanCode code: String)
