@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import MercariQRScanner
 
 protocol DCQRScannerViewControllerDelegate {
-    func viewController(_ viewController: DCQRScannerViewController, didScanCode code: String)
+    func viewController(_ viewController: DCQRScannerViewController, didScanCode code: String?, withError error: String?)
 }
 
 class DCQRScannerViewController: UIViewController {
@@ -56,12 +55,14 @@ class DCQRScannerViewController: UIViewController {
 // MARK: - QRScannerViewDelegate
 extension DCQRScannerViewController: QRScannerViewDelegate {
     func qrScannerView(_ qrScannerView: QRScannerView, didFailure error: QRScannerError) {
-        
+        dismiss(animated: true) {
+            self.delegate?.viewController(self, didScanCode: nil, withError: error.localizedDescription)
+        }
     }
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
         dismiss(animated: true) {
-            self.delegate?.viewController(self, didScanCode: code)
+            self.delegate?.viewController(self, didScanCode: code, withError: nil)
         }
     }
 

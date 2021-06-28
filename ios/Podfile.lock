@@ -2,16 +2,10 @@ PODS:
   - Capacitor (2.4.5):
     - CapacitorCordova
   - CapacitorCordova (2.4.5)
-  - MercariQRScanner (1.8.0)
 
 DEPENDENCIES:
   - "Capacitor (from `../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../node_modules/@capacitor/ios`)"
-  - MercariQRScanner
-
-SPEC REPOS:
-  trunk:
-    - MercariQRScanner
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -22,8 +16,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: 16fff19464a7d37e2f996e0994749b04111ed3f0
   CapacitorCordova: 4f552a757626d236959fd79e970b6b6a26efb859
-  MercariQRScanner: 5069ab8376a99f1e099682ac9288a131540e079c
 
-PODFILE CHECKSUM: d68d00f362c3c8efa1175b9c9fcc63a050a423d5
+PODFILE CHECKSUM: e66d6fa04b0daaf06d8498d39637adf77139c716
 
 COCOAPODS: 1.10.1

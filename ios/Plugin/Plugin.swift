@@ -32,11 +32,13 @@ public class QrScanner: CAPPlugin {
 }
 
 extension QrScanner: DCQRScannerViewControllerDelegate {
-    func viewController(_ viewController: DCQRScannerViewController, didScanCode code: String) {
-        self.pluginCallback?.success(
-            [
-                "result" : code
-            ]
-        )
+    func viewController(_ viewController: DCQRScannerViewController, didScanCode code: String?, withError error: String?) {
+        if let error = error {
+            pluginCallback?.reject(error)
+        } else if let code = code {
+            pluginCallback?.resolve([
+                "result": code
+            ])
+        }
     }
 }
