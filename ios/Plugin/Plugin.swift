@@ -6,7 +6,7 @@ import Capacitor
  * here: https://capacitorjs.com/docs/plugins/ios
  */
 @objc(QrScanner)
-public class QrScanner: CAPPlugin {
+public class QrScanner: CAPPlugin, DCQRScannerViewControllerDelegate {
     
     private var pluginCallback: CAPPluginCall?
     
@@ -18,7 +18,7 @@ public class QrScanner: CAPPlugin {
     }
     
     @objc
-    func scanQRCode(_ call: CAPPluginCall) {
+    func scanQrCode(_ call: CAPPluginCall) {
         pluginCallback = call
         
         let vc = DCQRScannerViewController(nibName: String(describing: DCQRScannerViewController.self), bundle: nil)
@@ -29,15 +29,13 @@ public class QrScanner: CAPPlugin {
             self.bridge.viewController.present(vc, animated: true, completion: nil)
         }
     }
-}
-
-extension QrScanner: DCQRScannerViewControllerDelegate {
+    
     func viewController(_ viewController: DCQRScannerViewController, didScanCode code: String?, withError error: String?) {
         if let error = error {
             pluginCallback?.reject(error)
         } else if let code = code {
             pluginCallback?.resolve([
-                "result": code
+                "result" : code
             ])
         }
     }
