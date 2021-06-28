@@ -37,7 +37,7 @@
     "dist/",
     "ios/",
     "android/",
-    "DiningcityCapacitorQrScanner.podspec"
+    "CapacitorQrScanner.podspec"
   ],
   "keywords": [
     "capacitor",
