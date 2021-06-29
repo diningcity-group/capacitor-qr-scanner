@@ -24,7 +24,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-d8-xGe" customClass="QRScannerView" customModule="Plugin" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="image" keyPath="focusImage" value="scan_qr_focus"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="focusImage" value="ic_scan_qr_focus.png"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRo-WL-nFg">
@@ -64,6 +64,6 @@
         </view>
     </objects>
     <resources>
-        <image name="scan_qr_focus" width="292" height="292"/>
+        <image name="ic_scan_qr_focus.png" width="292" height="292"/>
     </resources>
 </document>

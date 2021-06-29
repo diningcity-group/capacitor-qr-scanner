@@ -32,6 +32,8 @@ class DCQRScannerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        qrScannerView.focusImage = UIImage(named: "DCQRScanner.bundle/ic_scan_qr_focus")
         qrScannerView.configure(delegate: self, input: .init(isBlurEffectEnabled: true))
         qrScannerView.startRunning()
     }
