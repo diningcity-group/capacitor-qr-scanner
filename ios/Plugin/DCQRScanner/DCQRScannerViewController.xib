@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DCQRScannerViewController" customModule="DiningCity" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DCQRScannerViewController" customModule="Plugin" customModuleProvider="target">
             <connections>
                 <outlet property="closeButton" destination="KRo-WL-nFg" id="Yg9-nt-13n"/>
                 <outlet property="flashButton" destination="adl-Nc-9fj" id="S09-1A-WB9"/>
@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-d8-xGe" customClass="QRScannerView" customModule="MercariQRScanner">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-d8-xGe" customClass="QRScannerView" customModule="Plugin" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRo-WL-nFg">

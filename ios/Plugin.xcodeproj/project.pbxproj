@@ -16,6 +16,7 @@
 		396C8B25268AB13600713DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396C8B1E268AB13600713DA0 /* Images.xcassets */; };
 		396C8B26268AB13600713DA0 /* QRScannerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B1F268AB13600713DA0 /* QRScannerError.swift */; };
 		396C8B27268AB13600713DA0 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B20268AB13600713DA0 /* QRScannerView.swift */; };
+		396C8B29268ABCB500713DA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B28268ABCB500713DA0 /* Extensions.swift */; };
 		50ADFF92201F53D600D50D53 /* Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFF88201F53D600D50D53 /* Plugin.framework */; };
 		50ADFF97201F53D600D50D53 /* PluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFF96201F53D600D50D53 /* PluginTests.swift */; };
 		50ADFF99201F53D600D50D53 /* Plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ADFF8B201F53D600D50D53 /* Plugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 		396C8B1E268AB13600713DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		396C8B1F268AB13600713DA0 /* QRScannerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerError.swift; sourceTree = "<group>"; };
 		396C8B20268AB13600713DA0 /* QRScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		396C8B28268ABCB500713DA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF88201F53D600D50D53 /* Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF8B201F53D600D50D53 /* Plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		396C8B18268AB13600713DA0 /* DCQRScanner */ = {
 			isa = PBXGroup;
 			children = (
+				396C8B28268ABCB500713DA0 /* Extensions.swift */,
 				396C8B19268AB13600713DA0 /* DCQRScanner.bundle */,
 				396C8B1A268AB13600713DA0 /* DCQRScannerViewController.swift */,
 				396C8B1B268AB13600713DA0 /* DCQRScannerViewController.xib */,
@@ -348,6 +351,7 @@
 				50ADFFA82020EE4F00D50D53 /* Plugin.m in Sources */,
 				396C8B27268AB13600713DA0 /* QRScannerView.swift in Sources */,
 				396C8B22268AB13600713DA0 /* DCQRScannerViewController.swift in Sources */,
+				396C8B29268ABCB500713DA0 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

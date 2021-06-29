@@ -21,7 +21,7 @@ public class QrScanner: CAPPlugin, DCQRScannerViewControllerDelegate {
     func scanQrCode(_ call: CAPPluginCall) {
         pluginCallback = call
         
-        let vc = DCQRScannerViewController(nibName: String(describing: DCQRScannerViewController.self), bundle: Bundle(for: DCQRScannerViewController.self))
+        let vc = DCQRScannerViewController(nibName: String(describing: DCQRScannerViewController.self), bundle: .scannerModule)
         vc.modalPresentationStyle = .fullScreen
         vc.delegate = self
         
