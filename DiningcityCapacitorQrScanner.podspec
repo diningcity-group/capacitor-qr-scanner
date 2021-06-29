@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target  = '11.0'
   s.dependency 'Capacitor'
   s.swift_version = '5.1'
-  s.resources = ['ios/Plugin/DCQRScanner/DCQRScanner.bundle', 'ios/Plugin/DCQRScanner/*.xib', 'ios/Plugin/DCQRScanner/QRScanner/*.pdf']
+  s.resources = ['ios/Plugin/DCQRScanner/DCQRScanner.bundle', 'ios/Plugin/DCQRScanner/*.xib', 'ios/Plugin/DCQRScanner/QRScanner/Images.xcassets/scan_qr_focus.imageset/*.pdf']
 end
