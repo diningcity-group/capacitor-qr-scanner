@@ -24,10 +24,10 @@ class DCQRScannerViewController: UIViewController {
         super.viewDidLoad()
         
         // initialize buttons
-        closeButton.setImage(UIImage(named: "QRScanner.bundle/ic_close"), for: .normal)
+        closeButton.setImage(UIImage(named: "DCQRScanner.bundle/ic_close"), for: .normal)
         
-        flashButton.setImage(UIImage(named: "QRScanner.bundle/ic_flash_off"), for: .normal)
-        flashButton.setImage(UIImage(named: "QRScanner.bundle/ic_flash_on"), for: .selected)
+        flashButton.setImage(UIImage(named: "DCQRScanner.bundle/ic_flash_off"), for: .normal)
+        flashButton.setImage(UIImage(named: "DCQRScanner.bundle/ic_flash_on"), for: .selected)
     }
     
     override func viewDidAppear(_ animated: Bool) {
