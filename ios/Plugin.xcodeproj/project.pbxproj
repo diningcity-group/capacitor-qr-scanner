@@ -13,7 +13,6 @@
 		396C8B22268AB13600713DA0 /* DCQRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B1A268AB13600713DA0 /* DCQRScannerViewController.swift */; };
 		396C8B23268AB13600713DA0 /* DCQRScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 396C8B1B268AB13600713DA0 /* DCQRScannerViewController.xib */; };
 		396C8B24268AB13600713DA0 /* Bundle+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B1D268AB13600713DA0 /* Bundle+Module.swift */; };
-		396C8B25268AB13600713DA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396C8B1E268AB13600713DA0 /* Images.xcassets */; };
 		396C8B26268AB13600713DA0 /* QRScannerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B1F268AB13600713DA0 /* QRScannerError.swift */; };
 		396C8B27268AB13600713DA0 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B20268AB13600713DA0 /* QRScannerView.swift */; };
 		396C8B29268ABCB500713DA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396C8B28268ABCB500713DA0 /* Extensions.swift */; };
@@ -40,7 +39,6 @@
 		396C8B1A268AB13600713DA0 /* DCQRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCQRScannerViewController.swift; sourceTree = "<group>"; };
 		396C8B1B268AB13600713DA0 /* DCQRScannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCQRScannerViewController.xib; sourceTree = "<group>"; };
 		396C8B1D268AB13600713DA0 /* Bundle+Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Module.swift"; sourceTree = "<group>"; };
-		396C8B1E268AB13600713DA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		396C8B1F268AB13600713DA0 /* QRScannerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerError.swift; sourceTree = "<group>"; };
 		396C8B20268AB13600713DA0 /* QRScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		396C8B28268ABCB500713DA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				396C8B1D268AB13600713DA0 /* Bundle+Module.swift */,
-				396C8B1E268AB13600713DA0 /* Images.xcassets */,
 				396C8B1F268AB13600713DA0 /* QRScannerError.swift */,
 				396C8B20268AB13600713DA0 /* QRScannerView.swift */,
 			);
@@ -266,7 +263,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396C8B25268AB13600713DA0 /* Images.xcassets in Resources */,
 				396C8B21268AB13600713DA0 /* DCQRScanner.bundle in Resources */,
 				396C8B23268AB13600713DA0 /* DCQRScannerViewController.xib in Resources */,
 			);
