@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DCQRScannerViewController" customModule="Plugin" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="KRo-WL-nFg" id="Yg9-nt-13n"/>
+                <outlet property="flashButton" destination="adl-Nc-9fj" id="S09-1A-WB9"/>
+                <outlet property="qrScannerView" destination="icQ-d8-xGe" id="1PT-7N-Chg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-d8-xGe" customClass="QRScannerView" customModule="Plugin" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRo-WL-nFg">
+                    <rect key="frame" x="360" y="58" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Fiz-yW-dPq"/>
+                        <constraint firstAttribute="width" secondItem="KRo-WL-nFg" secondAttribute="height" multiplier="1:1" id="vSU-c7-qyL"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onClickClose:" destination="-1" eventType="touchUpInside" id="YFz-n9-gJZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adl-Nc-9fj">
+                    <rect key="frame" x="167" y="702" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="YG0-eB-rxr"/>
+                        <constraint firstAttribute="width" secondItem="adl-Nc-9fj" secondAttribute="height" multiplier="1:1" id="dlm-LY-ffJ"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onClickFlash:" destination="-1" eventType="touchUpInside" id="9IK-rH-wQa"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KRo-WL-nFg" secondAttribute="trailing" constant="14" id="FqV-Wz-4PN"/>
+                <constraint firstItem="KRo-WL-nFg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="cU1-6i-aok"/>
+                <constraint firstItem="icQ-d8-xGe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gHZ-wE-4me"/>
+                <constraint firstItem="adl-Nc-9fj" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hYT-fH-Bh8"/>
+                <constraint firstItem="icQ-d8-xGe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="q80-22-daU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="adl-Nc-9fj" secondAttribute="bottom" constant="80" id="s4T-JO-97M"/>
+                <constraint firstAttribute="trailing" secondItem="icQ-d8-xGe" secondAttribute="trailing" id="sWD-bC-1SB"/>
+                <constraint firstAttribute="bottom" secondItem="icQ-d8-xGe" secondAttribute="bottom" id="wZU-c5-KT6"/>
+            </constraints>
+            <point key="canvasLocation" x="80" y="90"/>
+        </view>
+    </objects>
+</document>
