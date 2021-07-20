@@ -62,7 +62,6 @@
     "url": "https://github.com/diningcity-group/capacitor-qr-scanner/issues"
   },
   "dependencies": {
-    "@capacitor/camera": "^1.0.3",
     "@diningcity/capacitor-qr-scanner": "^0.0.6",
     "plugin": "^0.3.3"
   }
