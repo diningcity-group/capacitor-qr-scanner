@@ -12,9 +12,17 @@ var capacitorPlugin = (function (exports, core) {
             console.log('ECHO', options);
             return options;
         }
+        async checkPermissions() {
+            throw this.unavailable('Permissions API not available in this browser.');
+        }
+        async requestPermissions() {
+            throw this.unavailable('Permissions API not available in this browser.');
+        }
+        async scanQrCode() {
+            throw this.unavailable('SacnQRCode not available in this browser.');
+        }
     }
     const QrScanner = new QrScannerWeb();
-    core.registerWebPlugin(QrScanner);
 
     exports.QrScanner = QrScanner;
     exports.QrScannerWeb = QrScannerWeb;

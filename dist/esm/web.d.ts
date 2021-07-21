@@ -1,10 +1,15 @@
 import { WebPlugin } from '@capacitor/core';
-import { QrScannerPlugin } from './definitions';
+import { QrScannerPlugin, PermissionStatus } from './definitions';
 export declare class QrScannerWeb extends WebPlugin implements QrScannerPlugin {
     constructor();
     echo(options: {
         value: string;
     }): Promise<{
+        value: string;
+    }>;
+    checkPermissions(): Promise<PermissionStatus>;
+    requestPermissions(): Promise<PermissionStatus>;
+    scanQrCode(): Promise<{
         value: string;
     }>;
 }
