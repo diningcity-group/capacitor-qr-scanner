@@ -5,5 +5,5 @@ declare module '@capacitor/core' {
 }
 
 export interface QrScannerPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  scanQrCode(): Promise<{value: string}>;
 }

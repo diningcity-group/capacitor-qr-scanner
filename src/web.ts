@@ -9,15 +9,11 @@ export class QrScannerWeb extends WebPlugin implements QrScannerPlugin {
     });
   }
 
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async scanQrCode(): Promise<{value: string}> {
+      throw this.unimplemented('No implemented on web.')
   }
 }
 
 const QrScanner = new QrScannerWeb();
 
 export { QrScanner };
-
-import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(QrScanner);
