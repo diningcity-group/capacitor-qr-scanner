@@ -17,9 +17,9 @@
   "author": "DiningCity Group",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^2.4.5",
-    "@capacitor/core": "^2.4.5",
-    "@capacitor/ios": "^2.4.5",
+    "@capacitor/android": "^3.1.1",
+    "@capacitor/core": "^3.1.1",
+    "@capacitor/ios": "^3.1.1",
     "@ionic/prettier-config": "^1.0.0",
     "@ionic/swiftlint-config": "^1.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
@@ -62,6 +62,7 @@
     "url": "https://github.com/diningcity-group/capacitor-qr-scanner/issues"
   },
   "dependencies": {
+    "@capacitor/cli": "^3.1.1",
     "@diningcity/capacitor-qr-scanner": "^0.0.6",
     "plugin": "^0.3.3"
   }
