@@ -21,8 +21,28 @@ npm i @diningcity/capacitor-qr-scanner;
 ionic capacitor copy;
 (https://ionicframework.com/docs/cli/commands/capacitor-copy)
 ````
-**NOTE:** After install the plug-in, you should add some code snippets into your android project.
+**NOTE:** After install the plug-in, you should add some settings and code snippets into your navite project.
 
+### iOS
+1. Open the ios project with Xcode from your project and add camera usage description in info.plist as follows
+
+````
+<key>NSCameraUsageDescription</key>
+<string>{Your camera usage description}</string>
+
+ex: App would like to use camera to scan QRCode.
+
+````
+
+or
+
+You can add this directly without coding with Xcode as following
+
+![Screen shot](./images/plugin_05.png)
+
+2. That's all
+
+### Android
 1. Open the android project with android studio and you should register the plugin class in MainActivity.java as follows
 
 ````
