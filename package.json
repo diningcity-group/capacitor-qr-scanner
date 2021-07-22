@@ -31,7 +31,7 @@
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^2.4.5"
+    "@capacitor/core": "^3.1.1"
   },
   "files": [
     "dist/",
@@ -63,7 +63,6 @@
   },
   "dependencies": {
     "@capacitor/cli": "^3.1.1",
-    "@diningcity/capacitor-qr-scanner": "^0.0.6",
     "plugin": "^0.3.3"
   }
 }
