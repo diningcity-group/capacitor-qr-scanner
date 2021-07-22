@@ -10,6 +10,7 @@ export default {
       '@capacitor/core': 'capacitorExports',
     },
     sourcemap: true,
+    inlineDynamicImports: true,
   },
   plugins: [
     nodeResolve({

@@ -1,2 +1,4 @@
+import type { QrScannerPlugin } from './definitions';
+declare const QrScanner: QrScannerPlugin;
 export * from './definitions';
-export * from './web';
+export { QrScanner };
