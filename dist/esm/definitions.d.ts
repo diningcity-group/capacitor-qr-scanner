@@ -5,10 +5,10 @@ export interface QrScannerPlugin {
     }): Promise<{
         value: string;
     }>;
-    requestPermissions(): Promise<PermissionStatus>;
     checkPermissions(): Promise<PermissionStatus>;
+    requestPermissions(): Promise<PermissionStatus>;
     scanQrCode(): Promise<{
-        value: string;
+        result: string;
     }>;
 }
 export interface PermissionStatus {

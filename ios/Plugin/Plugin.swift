@@ -60,7 +60,7 @@ public class QrScanner: CAPPlugin, DCQRScannerViewControllerDelegate {
             pluginCallback?.reject(error)
         } else if let code = code {
             pluginCallback?.resolve([
-                "value" : code
+                "result" : code
             ])
         }
     }

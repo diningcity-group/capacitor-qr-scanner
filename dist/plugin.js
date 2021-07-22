@@ -6,21 +6,25 @@ var capacitorPlugin = (function (exports, core) {
             console.log('ECHO', options);
             return options;
         }
-        async requestPermissions() {
-            return this.checkPermissions();
-        }
         async checkPermissions() {
-            if (typeof navigator === 'undefined' || !navigator.permissions) {
-                throw this.unavailable('Permissions API not available in this browser.');
-            }
-            const permission = await navigator.permissions.query({ name: "camera" });
-            return { camera: permission.state };
+            throw this.unimplemented('Not implemented on web.');
+        }
+        async requestPermissions() {
+            throw this.unimplemented('Not implemented on web.');
         }
         async scanQrCode() {
-            return { 'value': '' };
+            throw this.unimplemented('Not implemented on web.');
         }
     }
-    const QrScanner = new QrScannerWeb();
+    const QrScanner = core.registerPlugin('QrScanner', {
+        web: () => Promise.resolve().then(function () { return web; }).then(m => new m.QrScannerWeb()),
+    });
+
+    var web = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        QrScannerWeb: QrScannerWeb,
+        QrScanner: QrScanner
+    });
 
     exports.QrScanner = QrScanner;
     exports.QrScannerWeb = QrScannerWeb;

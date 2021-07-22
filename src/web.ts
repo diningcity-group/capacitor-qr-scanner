@@ -1,5 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
-import { PermissionStatus, QrScannerPlugin } from './definitions';
+import { QrScannerPlugin, PermissionStatus } from './definitions';
 
 export class QrScannerWeb extends WebPlugin implements QrScannerPlugin {
   async echo(options: { value: string }): Promise<{ value: string }> {
@@ -7,24 +7,21 @@ export class QrScannerWeb extends WebPlugin implements QrScannerPlugin {
     return options;
   }
 
-  async requestPermissions(): Promise<PermissionStatus> {
-    return this.checkPermissions();
-  }
-
   async checkPermissions(): Promise<PermissionStatus> {
-    if (typeof navigator === 'undefined' || !navigator.permissions) {
-      throw this.unavailable('Permissions API not available in this browser.');
-    }
-      
-    const permission = await navigator.permissions.query({name:"camera"});
-    return {camera: permission.state};
+    throw this.unimplemented('Not implemented on web.');
+  }
+    
+  async requestPermissions(): Promise<PermissionStatus> {
+    throw this.unimplemented('Not implemented on web.');
   }
 
-  async scanQrCode(): Promise<{ value: string }> {
-    return {'value': ''};
+  async scanQrCode(): Promise<{ result: string }> {
+    throw this.unimplemented('Not implemented on web.');
   }
 }
 
-const QrScanner = new QrScannerWeb();
-
+import { registerPlugin } from '@capacitor/core';
+const QrScanner = registerPlugin<QrScannerPlugin>('QrScanner', {
+  web: () => import('./web').then(m => new m.QrScannerWeb()),
+});
 export { QrScanner };
