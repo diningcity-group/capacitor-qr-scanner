@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,67 +48,66 @@ public class DCQRCodeScannerFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        if (rootView == null) {
-            rootView = inflater.inflate(R.layout.fragment_code_scanner, container, false);
-            codeScannerView = rootView.findViewById(R.id.codeScannerView);
-            codeScanner = new CodeScanner(getContext(), codeScannerView);
-            codeScanner.setDecodeCallback(new DecodeCallback() {
-                @Override
-                public void onDecoded(@NonNull Result result) {
-                    final Result _result = result;
-                    if (getActivity() != null) {
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                scannerListener.onQRCodeScannerResult(_result.getText(), null);
-                            }
-                        });
-                    }
-                }
-            });
-            codeScanner.setErrorCallback(new ErrorCallback() {
-                @Override
-                public void onError(@NonNull Exception error) {
-                    final Exception _error = error;
-                    if (getActivity() != null) {
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getActivity(), String.format(getString(R.string.scanner_error), _error.getLocalizedMessage()), Toast.LENGTH_LONG).show();
-                                scannerListener.onQRCodeScannerResult(null, _error.getLocalizedMessage());
-                            }
-                        });
-                    }
-                }
-            });
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        rootView = inflater.inflate(R.layout.fragment_code_scanner, container, false);
+        codeScannerView = rootView.findViewById(R.id.codeScannerView);
+        codeScanner = new CodeScanner(getContext(), codeScannerView);
+        codeScanner.setDecodeCallback(new DecodeCallback() {
+            @Override
+            public void onDecoded(@NonNull Result result) {
+                final Result _result = result;
                 if (getActivity() != null) {
-                    if (getActivity().checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                        isPermissionGranted = false;
-                        permissionResult =
-                                registerForActivityResult(
-                                        new ActivityResultContracts.RequestPermission(),
-                                        new ActivityResultCallback<Boolean>() {
-                                            @Override
-                                            public void onActivityResult(Boolean result) {
-                                                isPermissionGranted = true;
-                                                if (result) {
-                                                    codeScanner.startPreview();
-                                                }
-                                            }
-                                        });
-                        permissionResult.launch(Manifest.permission.CAMERA);
-                    } else {
-                        isPermissionGranted = true;
-                    }
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Log.v("onQRCodeScannerResult", _result.getText());
+                            scannerListener.onQRCodeScannerResult(_result.getText(), null);
+                        }
+                    });
                 }
-            } else {
-                isPermissionGranted = true;
             }
+        });
+        codeScanner.setErrorCallback(new ErrorCallback() {
+            @Override
+            public void onError(@NonNull Exception error) {
+                final Exception _error = error;
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getActivity(), String.format(getString(R.string.scanner_error), _error.getLocalizedMessage()), Toast.LENGTH_LONG).show();
+                            scannerListener.onQRCodeScannerResult(null, _error.getLocalizedMessage());
+                        }
+                    });
+                }
+            }
+        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (getActivity() != null) {
+                if (getActivity().checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    isPermissionGranted = false;
+                    permissionResult =
+                            registerForActivityResult(
+                                    new ActivityResultContracts.RequestPermission(),
+                                    new ActivityResultCallback<Boolean>() {
+                                        @Override
+                                        public void onActivityResult(Boolean result) {
+                                            isPermissionGranted = true;
+                                            if (result) {
+                                                codeScanner.startPreview();
+                                            }
+                                        }
+                                    });
+                    permissionResult.launch(Manifest.permission.CAMERA);
+                } else {
+                    isPermissionGranted = true;
+                }
+            }
+        } else {
+            isPermissionGranted = true;
+        }
 
-            if (isPermissionGranted) {
-                codeScanner.startPreview();
-            }
+        if (isPermissionGranted) {
+            codeScanner.startPreview();
         }
 
         return rootView;

@@ -55,49 +55,62 @@ public class QrScanner extends Plugin {
         }
     }
 
-    public void showScannerScreen(PluginCall call) {
+    public void showScannerScreen(final PluginCall call) {
 
         callCallbackId = call.getCallbackId();
         getBridge().saveCall(call);
 
-        int containerViewId = 1001;
-        FrameLayout containerView = getBridge().getActivity().findViewById(containerViewId);
-        if (containerView == null) {
-            containerView = new FrameLayout(getActivity().getApplicationContext());
-            containerView.setId(containerViewId);
+        final int containerViewId = 1001;
+        getBridge().executeOnMainThread(new Runnable() {
+            @Override
+            public void run() {
+                FrameLayout containerView = getBridge().getActivity().findViewById(containerViewId);
+                if (containerView == null) {
+                    containerView = new FrameLayout(getActivity().getApplicationContext());
+                    containerView.setId(containerViewId);
 
-            getBridge().getWebView().setBackgroundColor(Color.TRANSPARENT);
-            ((ViewGroup)getBridge().getWebView().getParent()).addView(containerView);
+                    getBridge().getWebView().setBackgroundColor(Color.TRANSPARENT);
 
-            final FragmentManager manager = getBridge().getActivity().getSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-            scannerFragment = DCQRCodeScannerFragment.getInstance(new DCQRCodeScannerListener() {
-                @Override
-                public void onQRCodeScannerResult(@Nullable String qrCodeResult, @Nullable String error) {
-                    FragmentManager _manager = getBridge().getActivity().getSupportFragmentManager();
-                    FragmentTransaction _transaction = _manager.beginTransaction();
-                    _transaction.remove(scannerFragment);
-                    scannerFragment = null;
+                    ((ViewGroup)getBridge().getWebView().getParent()).addView(containerView);
 
-                    if (callCallbackId != null) {
-                        PluginCall savedCall = getBridge().getSavedCall(callCallbackId);
-                        if (qrCodeResult != null) {
-                            JSObject ret = new JSObject();
-                            ret.put("result", qrCodeResult);
-                            savedCall.resolve(ret);
-                        } else if (error != null) {
-                            savedCall.reject(error);
-                        } else {
-                            savedCall.reject("Error occurred during scan a qrcode");
+                    final FrameLayout _containerView = containerView;
+                    final FragmentManager manager = getBridge().getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    scannerFragment = DCQRCodeScannerFragment.getInstance(new DCQRCodeScannerListener() {
+                        @Override
+                        public void onQRCodeScannerResult(@Nullable String qrCodeResult, @Nullable String error) {
+                            if (callCallbackId != null) {
+                                PluginCall savedCall = getBridge().getSavedCall(callCallbackId);
+                                if (qrCodeResult != null) {
+                                    JSObject ret = new JSObject();
+                                    ret.put("result", qrCodeResult);
+                                    savedCall.resolve(ret);
+                                    Log.v("JACK-QRCODE", qrCodeResult);
+                                } else if (error != null) {
+                                    savedCall.reject(error);
+                                } else {
+                                    savedCall.reject("Error occurred during scan a qrcode");
+                                }
+                            }
+
+                            FragmentManager _manager = getBridge().getActivity().getSupportFragmentManager();
+                            FragmentTransaction _transaction = _manager.beginTransaction();
+                            _transaction.remove(scannerFragment);
+                            _transaction.commit();
+                            scannerFragment = null;
+
+                            if (_containerView.getParent() != null) {
+                                ((ViewGroup)_containerView.getParent()).removeView(_containerView);
+                            }
                         }
-                    }
+                    });
+                    transaction.add(containerViewId, scannerFragment);
+                    transaction.commit();
+                } else {
+                    call.reject("QRCode scanner has already been launched");
                 }
-            });
-            transaction.add(containerViewId, scannerFragment);
-            transaction.commit();
-        } else {
-            call.reject("QRCode scanner has already been launched");
-        }
+            }
+        });
     }
 
 }
