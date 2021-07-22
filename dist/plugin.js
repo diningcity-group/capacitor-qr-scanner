@@ -2,24 +2,22 @@ var capacitorPlugin = (function (exports, core) {
     'use strict';
 
     class QrScannerWeb extends core.WebPlugin {
-        constructor() {
-            super({
-                name: 'QrScanner',
-                platforms: ['web'],
-            });
-        }
         async echo(options) {
             console.log('ECHO', options);
             return options;
         }
-        async checkPermissions() {
-            throw this.unavailable('Permissions API not available in this browser.');
-        }
         async requestPermissions() {
-            throw this.unavailable('Permissions API not available in this browser.');
+            return this.checkPermissions();
+        }
+        async checkPermissions() {
+            if (typeof navigator === 'undefined' || !navigator.permissions) {
+                throw this.unavailable('Permissions API not available in this browser.');
+            }
+            const permission = await navigator.permissions.query({ name: "camera" });
+            return { camera: permission.state };
         }
         async scanQrCode() {
-            throw this.unavailable('SacnQRCode not available in this browser.');
+            return { 'value': '' };
         }
     }
     const QrScanner = new QrScannerWeb();
