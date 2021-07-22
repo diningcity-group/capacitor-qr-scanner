@@ -24,7 +24,7 @@ ionic capacitor copy;
 **NOTE:** After install the plug-in, you should add some settings and code snippets into your navite project.
 
 ### iOS
-1. Open the ios project with Xcode from your project and add camera usage description in info.plist as follows
+1. Open the ios project with Xcode from your project and add camera usage description in info.plist as following
 
 ````
 <key>NSCameraUsageDescription</key>
