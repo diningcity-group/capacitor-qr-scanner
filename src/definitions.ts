@@ -1,3 +1,3 @@
 export interface QrScannerPlugin {
-  scanQrCode(): Promise<{value: string}>;
+  scanQrCode(): Promise<{result: string}>;
 }

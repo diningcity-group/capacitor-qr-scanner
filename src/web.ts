@@ -6,7 +6,7 @@ export class QrScannerWeb extends WebPlugin implements QrScannerPlugin {
     super();
   }
 
-  async scanQrCode(): Promise<{value: string}> {
+  async scanQrCode(): Promise<{result: string}> {
       throw this.unimplemented('No implemented on web.')
   }
 }
