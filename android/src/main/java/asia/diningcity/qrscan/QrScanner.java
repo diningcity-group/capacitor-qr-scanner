@@ -103,8 +103,22 @@ public class QrScanner extends Plugin {
                                 ((ViewGroup)_containerView.getParent()).removeView(_containerView);
                             }
                         }
+
+                        @Override
+                        public void onQRCodeScannerClosed() {
+                            FragmentManager _manager = getBridge().getActivity().getSupportFragmentManager();
+                            FragmentTransaction _transaction = _manager.beginTransaction();
+                            _transaction.remove(scannerFragment);
+                            _transaction.commit();
+                            scannerFragment = null;
+
+                            if (_containerView.getParent() != null) {
+                                ((ViewGroup)_containerView.getParent()).removeView(_containerView);
+                            }
+                        }
                     });
                     transaction.add(containerViewId, scannerFragment);
+                    transaction.addToBackStack("scannerFragment");
                     transaction.commit();
                 } else {
                     call.reject("QRCode scanner has already been launched");
