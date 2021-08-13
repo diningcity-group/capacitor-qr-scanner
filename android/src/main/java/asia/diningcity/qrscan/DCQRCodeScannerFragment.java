@@ -110,6 +110,16 @@ public class DCQRCodeScannerFragment extends Fragment {
             codeScanner.startPreview();
         }
 
+        return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (isPermissionGranted) {
+            codeScanner.startPreview();
+        }
+
         requireActivity().getOnBackPressedDispatcher()
                 .addCallback(new OnBackPressedCallback(true) {
                     @Override
@@ -119,17 +129,16 @@ public class DCQRCodeScannerFragment extends Fragment {
                         }
                     }
                 });
-        return rootView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
     }
 
     @Override
     public void onPause() {
-        codeScanner.releaseResources();
         super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        codeScanner.releaseResources();
     }
 }
