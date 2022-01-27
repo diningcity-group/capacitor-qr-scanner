@@ -121,7 +121,7 @@ public class DCQRCodeScannerFragment extends Fragment {
         }
 
         requireActivity().getOnBackPressedDispatcher()
-                .addCallback(new OnBackPressedCallback(true) {
+                .addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
                     @Override
                     public void handleOnBackPressed() {
                         if (scannerListener != null) {
