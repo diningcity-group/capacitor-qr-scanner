@@ -97,3 +97,9 @@ After remove old android directory from the root director of the project, then r
 npx cap add android
 npx cap open android
 ````
+
+After open the android project with Android Studio, then you should add the following dependency repository under the allprojects > repositories in the build.gradle of the project.
+````
+maven { url 'https://jitpack.io' }
+````
+![android_–_build_gradle__android_](https://user-images.githubusercontent.com/30079762/209921328-a32c3c1e-34ec-49d5-a558-3c7946eedc47.png)
