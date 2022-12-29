@@ -68,14 +68,14 @@ public class DCQRCodeScannerFragment extends Fragment {
         });
         codeScanner.setErrorCallback(new ErrorCallback() {
             @Override
-            public void onError(@NonNull Exception error) {
-                final Exception _error = error;
+            public void onError(@NonNull Throwable thrown) {
+                final Throwable _thrown = thrown;
                 if (getActivity() != null) {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getActivity(), String.format(getString(R.string.scanner_error), _error.getLocalizedMessage()), Toast.LENGTH_LONG).show();
-                            scannerListener.onQRCodeScannerResult(null, _error.getLocalizedMessage());
+                            Toast.makeText(getActivity(), String.format(getString(R.string.scanner_error), _thrown.getLocalizedMessage()), Toast.LENGTH_LONG).show();
+                            scannerListener.onQRCodeScannerResult(null, _thrown.getLocalizedMessage());
                         }
                     });
                 }
