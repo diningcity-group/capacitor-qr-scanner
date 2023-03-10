@@ -1,6 +1,6 @@
 {
   "name": "@diningcity/capacitor-qr-scanner",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A Capacitor plug in to scan QR Codes",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -17,9 +17,9 @@
   "author": "DiningCity Group",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^3.3.4",
-    "@capacitor/core": "^3.3.4",
-    "@capacitor/ios": "^3.3.4",
+    "@capacitor/android": "^4.0.0",
+    "@capacitor/core": "^4.0.0",
+    "@capacitor/ios": "^4.0.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
     "@rollup/plugin-node-resolve": "^8.1.0",
@@ -31,7 +31,7 @@
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.3.4"
+    "@capacitor/core": "^4.0.0"
   },
   "files": [
     "dist/",
@@ -62,6 +62,6 @@
     "url": "https://github.com/diningcity-group/capacitor-qr-scanner/issues"
   },
   "dependencies": {
-    "@capacitor/cli": "^3.3.4"
+    "@capacitor/cli": "^4.0.0"
   }
 }
