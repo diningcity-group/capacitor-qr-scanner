@@ -2,4 +2,5 @@
     <string name="my_string">Just a simple string</string>
     <string name="scan_result">Scan result</string>
     <string name="scanner_error">Scanner error: %s</string>
+    <string name="close_button_description">close camera button</string>
 </resources>

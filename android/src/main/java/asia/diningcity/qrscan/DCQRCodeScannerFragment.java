@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -30,6 +31,7 @@ public class DCQRCodeScannerFragment extends Fragment {
 
     private View rootView;
     private CodeScannerView codeScannerView;
+    private ImageView closeImageView;
     private CodeScanner codeScanner;
     private Boolean isPermissionGranted;
     private ActivityResultLauncher<String> permissionResult;
@@ -51,6 +53,15 @@ public class DCQRCodeScannerFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_code_scanner, container, false);
         codeScannerView = rootView.findViewById(R.id.codeScannerView);
         codeScanner = new CodeScanner(getContext(), codeScannerView);
+        closeImageView = rootView.findViewById(R.id.closeImageView);
+        closeImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (scannerListener != null) {
+                    scannerListener.onQRCodeScannerClosed();
+                }
+            }
+        });
         codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull Result result) {
