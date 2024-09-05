@@ -2,3 +2,7 @@
 .idea/
 build/
 node_modules/
+package-lock.json
+yarn.lock
+ios/Podfile.lock
+ios/Pods/Manifest.lock
