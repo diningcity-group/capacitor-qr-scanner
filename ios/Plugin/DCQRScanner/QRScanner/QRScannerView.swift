@@ -93,7 +93,8 @@ public class QRScannerView: UIView {
 
     public func stopRunning() {
         guard session.isRunning else { return }
-        videoDataQueue.async { [weak self] in
+        // 和 startRunning / 资源释放放同一个串行队列，保证 stop 先于拆卸执行
+        metadataQueue.async { [weak self] in
             self?.session.stopRunning()
         }
         metadataOutputEnable = false
@@ -130,8 +131,22 @@ public class QRScannerView: UIView {
         setTorchActive(isOn: false)
         focusImageView.removeFromSuperview()
         qrCodeImageView.removeFromSuperview()
-        session.inputs.forEach { session.removeInput($0) }
-        session.outputs.forEach { session.removeOutput($0) }
+        // 拆卸 AVCaptureSession(removeInput/removeOutput)会隐式重新配置会话，
+        // 会话还在运行时要等相机硬件停下，可能阻塞数秒。deinit 跑在主线程，
+        // 直接做会让 WebView 整页卡住(关闭扫码页后点击无响应)，所以放到
+        // metadataQueue 上，与 start/stop 串行执行。
+        let session = self.session
+        let inputs = session.inputs
+        let outputs = session.outputs
+        metadataQueue.async {
+            if session.isRunning {
+                session.stopRunning()
+            }
+            session.beginConfiguration()
+            inputs.forEach { session.removeInput($0) }
+            outputs.forEach { session.removeOutput($0) }
+            session.commitConfiguration()
+        }
         removePreviewLayer()
         torchActiveObservation = nil
     }
